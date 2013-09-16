@@ -8,4 +8,6 @@ target/
 .idea
 overlays/
 *.iws
+*.iml
+*.ipr
 
