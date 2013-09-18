@@ -1,0 +1,9 @@
+dependencies {
+    compile "commons-codec:commons-codec:${project.commonsCodecVersion}"
+    compile "commons-lang:commons-lang:${project.commonsLangVersion}"
+    compile "org.aspectj:aspectjrt:${project.aspectjVersion}"
+    compile "org.slf4j:slf4j-api:${project.slf4jVersion}"
+    compile "javax.inject:javax.inject:${project.injectVersion}"
+    compile "javax.validation:validation-api:${project.validationVersion}"
+    compile "org.springframework:spring-tx:${project.springVersion}"
+}

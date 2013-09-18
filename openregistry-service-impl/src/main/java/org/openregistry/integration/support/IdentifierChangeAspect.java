@@ -40,7 +40,8 @@ public class IdentifierChangeAspect {
     @Inject
     private IdentifierChangeEventNotificationService idChangeNotificationService;
 
-    @AfterReturning("(execution (* org.openregistry.core.service.IdentifierChangeService.change(..)))")
+    // Not a working @AfterReturning("(execution (* org.openregistry.core.service.IdentifierChangeService.change(..)))")
+    // TODO: fix this
     public void fireIdentifierChangeEvent(final JoinPoint joinPoint) {
         IdentifierType internalType = (IdentifierType)joinPoint.getArgs()[0];
         Identifier internalId = (Identifier)joinPoint.getArgs()[1];

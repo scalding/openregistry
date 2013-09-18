@@ -1,0 +1,30 @@
+apply plugin: aspectj.AspectJPlugin
+
+sourceCompatibility = "1.6"
+targetCompatibility = "1.6"
+
+dependencies {
+    aspectpath "org.springframework:spring-aspects:${project.springVersion}"
+
+    compile "org.springframework:spring-aspects:${project.springVersion}"
+    compile "javax.inject:javax.inject:${project.injectVersion}"
+    compile "org.springframework:spring-beans:${project.springVersion}"
+    compile "commons-lang:commons-lang:${project.commonsLangVersion}"
+    compile "org.slf4j:slf4j-api:${project.slf4jVersion}"
+    compile "org.springframework:spring-context:${project.springVersion}"
+    compile "org.springframework.security:spring-security-core:${project.springSecurityVersion}"
+    compile "org.hibernate.javax.persistence:hibernate-jpa-2.0-api:1.0.1.Final"
+    compile "org.hibernate:hibernate-envers:${project.hibernateVersion}"
+    compile "org.hibernate:hibernate-core:${project.hibernateVersion}"
+    compile "org.hibernate:hibernate-validator:${project.hibernateValidatorVersion}"
+    compile project(":openregistry-api")
+
+    testCompile "junit:junit:${project.junitVersion}"
+    testCompile "org.springframework:spring-test:${project.springVersion}"
+    testCompile "org.springframework:spring-jdbc:${project.springVersion}"
+    testCompile "org.springframework:spring-orm:${project.springVersion}"
+    testCompile "org.hsqldb:hsqldb:${project.hsqldbVersion}"
+    testCompile "org.hibernate:hibernate-ehcache:${project.hibernateVersion}"
+    testCompile project(":openregistry-test-support")
+    testCompile "aopalliance:aopalliance:${project.aopallianceVersion}"
+}

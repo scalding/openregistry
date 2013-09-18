@@ -1,0 +1,38 @@
+apply plugin: aspectj.AspectJPlugin
+
+sourceCompatibility = "1.6"
+targetCompatibility = "1.6"
+
+dependencies {
+    aspectpath files(project(":openregistry-repository-jpa-impl").jar.archivePath)
+    aspectpath "org.springframework:spring-tx:${project.springVersion}"
+    aspectpath "org.springframework:spring-aspects:${project.springVersion}"
+
+    compile "org.springframework:spring-aspects:${project.springVersion}"
+    compile project(":openregistry-repository-jpa-impl")
+
+    compile "org.aspectj:aspectjrt:${project.aspectjVersion}"
+    compile "org.slf4j:slf4j-api:${project.slf4jVersion}"
+    compile "org.springframework:spring-beans:${project.springVersion}"
+    compile "org.springframework:spring-core:${project.springVersion}"
+    compile "org.springframework:spring-context:${project.springVersion}"
+    compile "org.springframework:spring-jdbc:${project.springVersion}"
+    compile "org.springframework:spring-context-support:${project.springVersion}"
+    compile "org.springframework.security:spring-security-core:${project.springSecurityVersion}"
+    compile "org.springframework:spring-tx:${project.springVersion}"
+    compile "javax.inject:javax.inject:${project.injectVersion}"
+    compile "javax.validation:validation-api:${project.validationVersion}"
+    compile "commons-lang:commons-lang:${project.commonsLangVersion}"
+    compile "net.sf.ehcache:ehcache-core:${project.ehcacheVersion}"
+    compile "org.apache.camel:camel-core:${project.camelVersion}"
+    compile "org.hibernate.javax.persistence:hibernate-jpa-2.0-api:1.0.1.Final"
+
+    compile project(":openregistry-api")
+
+    testCompile "junit:junit:${project.junitVersion}"
+    testCompile "org.springframework:spring-test:${project.springVersion}"
+    testCompile project(":openregistry-test-support")
+    testCompile "org.springframework:spring-orm:${project.springVersion}"
+    testCompile "org.hsqldb:hsqldb:${project.hsqldbVersion}"
+    testCompile "org.hibernate:hibernate-ehcache:${project.hibernateVersion}"
+}

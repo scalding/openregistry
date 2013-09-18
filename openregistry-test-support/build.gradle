@@ -1,0 +1,5 @@
+dependencies {
+    compile project(":openregistry-api")
+    compile "org.mockito:mockito-all:${project.mockitoVersion}"
+    compile "org.springframework:spring-context-support:${project.springVersion}"
+}

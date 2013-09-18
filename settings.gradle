@@ -1,0 +1,4 @@
+include "openregistry-api"
+include "openregistry-test-support"
+include "openregistry-repository-jpa-impl"
+include "openregistry-service-impl"

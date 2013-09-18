@@ -1,0 +1,61 @@
+buildscript {
+    repositories {
+        maven { url "http://repo.springsource.org/plugins-release" }
+    }
+    dependencies {
+        classpath "org.springframework.build.gradle:propdeps-plugin:0.0.4"
+    }
+}
+
+configure(allprojects) {
+    apply plugin: 'propdeps'
+}
+
+allprojects {
+    apply plugin: "groovy"
+    apply plugin: "maven"
+
+    group = "org.jasig.openregistry"
+    version "0.9.3-SNAPSHOT"
+
+    sourceCompatibility = "1.7"
+    targetCompatibility = "1.7"
+
+    repositories {
+        mavenCentral()
+        maven { url "http://repository.jboss.org/nexus/content/groups/public-jboss"}
+    }
+
+    ext {
+        aspectjVersion = "1.6.10"
+        commonsCodecVersion = "1.4"
+        commonsLangVersion = "2.4"
+        slf4jVersion = "1.5.11"
+        injectVersion = "1"
+        validationVersion = "1.0.0.GA"
+        springVersion = "3.0.5.RELEASE"
+        springSecurityVersion = "3.0.5.RELEASE"
+        hibernateVersion = "3.6.8.Final"
+        hibernateValidatorVersion = "4.0.2.GA"
+        junitVersion = "4.6"
+        groovyVersion = "1.7.6"
+        spockVersion = "0.7-groovy-2.0"
+        hsqldbVersion = "1.8.0.10"
+        mockitoVersion = "1.8.5"
+        aopallianceVersion = "1.0"
+        ehcacheVersion = "2.2.0"
+        camelVersion = "2.9.0"
+    }
+
+    dependencies {
+        compile "org.codehaus.groovy:groovy-all:${project.groovyVersion}"
+        testCompile "org.spockframework:spock-core:${project.spockVersion}"
+    }
+}
+
+task(type: Wrapper) {
+    gradleVersion = '1.8'
+}
+
+dependencies {
+}
